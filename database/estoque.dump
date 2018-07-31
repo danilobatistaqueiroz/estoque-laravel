@@ -1,0 +1,54 @@
+
+CREATE TABLE back_produtos (
+  ID int(11) NOT NULL DEFAULT '0',
+  nome varchar(255) NOT NULL,
+  valor varchar(255) DEFAULT NULL,
+  descricao varchar(255) DEFAULT NULL,
+  quantidade int(11) DEFAULT NULL
+) ;
+
+
+INSERT INTO back_produtos VALUES (1,'Geladeira','5900.00','Side by Side com gelo na porta',2),(2,'Fogao','950.00','Painel automatico e forno eletrico',5),(3,'Microondas','1520.00','Manda SMS quando termina de esquentar',1);
+
+CREATE TABLE migrations (
+  migration varchar(255) NOT NULL,
+  batch int(11) NOT NULL
+) ;
+
+INSERT INTO migrations VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1);
+
+
+CREATE TABLE password_resets (
+  email varchar(255) ,
+  token varchar(255) ,
+  created_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ;
+
+
+
+CREATE TABLE produtos (
+  id integer NOT NULL AUTO_INCREMENT,
+  nome varchar(255) DEFAULT NULL,
+  valor varchar(255) DEFAULT NULL,
+  descricao varchar(255) DEFAULT NULL,
+  quantidade int(11) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ;
+
+
+
+INSERT INTO produtos VALUES (1,'Geladeira','5900.00','Side by Side com gelo na porta',2),(2,'Fogão','950.00','Painel automático e forno elétrico',5),(3,'Microondas','1520.00','Manda SMS quando termina de esquentar',1);
+
+
+
+CREATE TABLE users (
+  id integer NOT NULL AUTO_INCREMENT,
+  name varchar(255) ,
+  email varchar(255) ,
+  password varchar(60) ,
+  remember_token varchar(100) DEFAULT NULL,
+  created_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  updated_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (id),
+  UNIQUE KEY users_email_unique (email)
+) ;
